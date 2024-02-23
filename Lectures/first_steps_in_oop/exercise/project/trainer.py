@@ -13,6 +13,7 @@ class Trainer:
         return f"Caught {pokemon.pokemon_details()}"
 
     def release_pokemon(self, pokemon_name: str):
+        # p = next(filter(lambda p: p.name == pokemon_name, self.pokemons))
         for p in self.pokemons:
             if pokemon_name == p.name:
                 self.pokemons.remove(p)
