@@ -6,3 +6,4 @@ class Hero:
 
     def __str__(self):
         return f"{self.username} of type {type(self).__name__} has level {self.level}"
+        # return f"{self.username} of type {self.__class__.__name__} has level {self.level}"
