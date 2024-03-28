@@ -92,12 +92,13 @@ class Tournament:
 
     def get_statistics(self):
         sorted_teams = sorted(self.teams, key=lambda t: -t.wins)
-        team_statistics = '\n'.join(team.get_statistics() for team in sorted_teams)
 
         result = (f"Tournament: {self.name}\n"
                   f"Number of Teams: {len(self.teams)}\n"
-                  f"Teams:\n"
-                  f"{team_statistics}")
+                  f"Teams:")
+
+        for team in sorted_teams:
+            result += "\n" + team.get_statistics()
 
         return result
 
